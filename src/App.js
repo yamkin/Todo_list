@@ -171,7 +171,7 @@ function App() {
               </svg>
             </span>
           </div>
-          <div className="grid grid-cols-[max-content_max-content] gap-[15px] items-center text-[#B4B4B4] group hover:text-black ease-in duration-200 cursor-pointer">
+          {/* <div className="grid grid-cols-[max-content_max-content] gap-[15px] items-center text-[#B4B4B4] group hover:text-black ease-in duration-200 cursor-pointer">
             <svg
               width="16"
               height="16"
@@ -196,6 +196,21 @@ function App() {
               />
             </svg>
             <p>Новая задача</p>
+          </div> */}
+          <div>
+            <input
+              className="mb-[16px] pt-[9px] pb-[9px] pl-[14px] rounded-[4px] w-[100%] border-2 border-solid border-[#EFEFEF] hover:border-2 hover:border-solid hover:border-[#525252] ease-out duration-200 focus:border-2 focus:border-solid focus:border-[#525252] outline-none"
+              type="text"
+              placeholder="Текст задачи"
+            />
+            <div>
+              <button className="pl-[16px] pr-[16px] pt-[13px] pb-[13px] mr-[9px] text-white bg-[#4DD599] rounded-[4px]">
+                Добавить задачу
+              </button>
+              <button className="pl-[16px] pr-[16px] pt-[13px] pb-[13px] text-[#9C9C9C] bg-[#F4F6F8] rounded-[4px]">
+                Отмена
+              </button>
+            </div>
           </div>
         </div>
       </div>
