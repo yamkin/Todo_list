@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
-import List from '../List/List';
-import AddButton from '../AddButton';
-import Badge from '../Badge';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+
+import { List, Badge } from '../../components';
 
 function AddList({ colors, onAdd }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [selectedBadgeColor, setSelectedBadgeColor] = useState(colors[0].id);
+  const [selectedBadgeColor, setSelectedBadgeColor] = useState(3);
+  const [isLoading, setIsLoading] = useState(false);
   const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+    if (Array.isArray(colors)) {
+      setSelectedBadgeColor(colors[0].id);
+    }
+  }, [colors]);
 
   const onClose = () => {
     setInputValue('');
@@ -19,13 +26,23 @@ function AddList({ colors, onAdd }) {
       alert(`поле пустое`);
       return;
     }
-    const color = colors.filter((c) => c.id === selectedBadgeColor)[0].hex;
-    onAdd({
-      id: Date.now(),
-      name: inputValue,
-      color: color,
-    });
-    onClose();
+
+    setIsLoading(true);
+
+    axios
+      .post('http://localhost:3001/lists', { name: inputValue, colorId: selectedBadgeColor })
+      .then(({ data }) => {
+        const color = colors.filter((c) => c.id === selectedBadgeColor)[0];
+        const listObj = { ...data, color: color };
+        onAdd(listObj);
+        onClose();
+      })
+      .catch((e) => {
+        console.error(e);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -100,7 +117,13 @@ function AddList({ colors, onAdd }) {
               />
             ))}
           </div>
-          <AddButton onClick={addList} className="w-[100%]}" />
+          {/* <AddButton onClick={addList} className="w-[100%]}" /> */}
+          <button
+            onClick={addList}
+            className="w-[100%] text-white bg-[#4DD599] rounded-[4px] hover:bg-[#3fd192] active:bg-[#3fd192] ease-out duration-200"
+            href="#">
+            {isLoading ? 'Добавление...' : 'Добавить'}
+          </button>
         </div>
       )}
     </>

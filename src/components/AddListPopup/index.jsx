@@ -1,5 +1,5 @@
 import React from 'react';
-import AddButton from '../AddButton';
+import { AddButton } from '../../components';
 
 function AddListPopup({ colors }) {
   console.log(`AddListPoppup ${colors}`);
