@@ -23,7 +23,7 @@ function AddList({ colors, onAdd }) {
 
   const addList = () => {
     if (!inputValue) {
-      alert(`поле пустое`);
+      alert(`Поле пустое. Напишите заголовок списка задач`);
       return;
     }
 
@@ -33,13 +33,11 @@ function AddList({ colors, onAdd }) {
       .post('http://localhost:3001/lists', { name: inputValue, colorId: selectedBadgeColor })
       .then(({ data }) => {
         const color = colors.filter((c) => c.id === selectedBadgeColor)[0];
-        const listObj = { ...data, color: color };
+        const listObj = { ...data, color: color, tasks: [] };
         onAdd(listObj);
         onClose();
       })
-      .catch((e) => {
-        console.error(e);
-      })
+      .catch(() => alert('Ошибка при добавлении списка'))
       .finally(() => {
         setIsLoading(false);
       });
@@ -117,10 +115,10 @@ function AddList({ colors, onAdd }) {
               />
             ))}
           </div>
-          {/* <AddButton onClick={addList} className="w-[100%]}" /> */}
           <button
+            disabled={isLoading || !inputValue}
             onClick={addList}
-            className="w-[100%] text-white bg-[#4DD599] rounded-[4px] hover:bg-[#3fd192] active:bg-[#3fd192] ease-out duration-200"
+            className="w-[100%] text-white bg-[#4DD599] rounded-[4px] hover:bg-[#3fd192] active:bg-[#3fd192] ease-out duration-200  disabled:text-white disabled:bg-[#e0dfdf]"
             href="#">
             {isLoading ? 'Добавление...' : 'Добавить'}
           </button>

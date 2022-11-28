@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 
-function List({ items, isRemoveble, addList, onClick, active, onRemove, onClickItem, activeItem }) {
+function List({ items, isRemoveble, addList, onClick, onRemove, onClickItem, activeItem }) {
   const removeList = (id) => {
     axios.delete(`http://localhost:3001/lists/${id}`).then(() => {
       onRemove(id);
@@ -32,7 +32,9 @@ function List({ items, isRemoveble, addList, onClick, active, onRemove, onClickI
               {item.icon ? (
                 item.icon
               ) : (
-                <i className={`mr-[13px] flex rounded-full w-2.5 h-2.5 bg-[${item.color.hex}]`}></i>
+                <i
+                  className="mr-[13px] flex rounded-full w-2.5 h-2.5"
+                  style={{ backgroundColor: `${item.color.hex}` }}></i>
               )}
             </i>
             <div title={item.name} className="text-ellipsis overflow-hidden whitespace-nowrap">

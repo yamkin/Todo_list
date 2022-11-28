@@ -1,0 +1,116 @@
+{
+  "lists": [
+    {
+      "name": "Музыка",
+      "colorId": 6,
+      "id": 6
+    },
+    {
+      "name": "Backend",
+      "colorId": 4,
+      "id": 10
+    },
+    {
+      "name": "Магазин",
+      "colorId": 5,
+      "id": 11
+    },
+    {
+      "name": "Frontend",
+      "colorId": 8,
+      "id": 12
+    }
+  ],
+  "tasks": [
+    {
+      "listId": 10,
+      "text": "Провести тестирование ",
+      "completed": false,
+      "id": 14
+    },
+    {
+      "listId": 10,
+      "text": "Созвон",
+      "completed": false,
+      "id": 15
+    },
+    {
+      "listId": 11,
+      "text": "Купить овощи",
+      "completed": false,
+      "id": 16
+    },
+    {
+      "listId": 11,
+      "text": "Купить фрукты",
+      "completed": false,
+      "id": 17
+    },
+    {
+      "listId": 12,
+      "text": "Learn TypeScript",
+      "completed": false,
+      "id": 18
+    },
+    {
+      "listId": 12,
+      "text": "Learn React and Redux",
+      "completed": false,
+      "id": 19
+    },
+    {
+      "listId": 12,
+      "text": "Learn SCSS",
+      "completed": false,
+      "id": 25
+    },
+    {
+      "listId": 12,
+      "text": "Learn Docker",
+      "completed": false,
+      "id": 26
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "hex": "#C9D1D3",
+      "name": "grey"
+    },
+    {
+      "id": 2,
+      "hex": "#42B883",
+      "name": "green"
+    },
+    {
+      "id": 3,
+      "hex": "#64C4ED",
+      "name": "blue"
+    },
+    {
+      "id": 4,
+      "hex": "#FFBBCC",
+      "name": "pink"
+    },
+    {
+      "id": 5,
+      "hex": "#B6E6BD",
+      "name": "lime"
+    },
+    {
+      "id": 6,
+      "hex": "#C355F5",
+      "name": "purple"
+    },
+    {
+      "id": 7,
+      "hex": "#09011A",
+      "name": "black"
+    },
+    {
+      "id": 8,
+      "hex": "#FF6464",
+      "name": "red"
+    }
+  ]
+}
