@@ -21,8 +21,7 @@ function List({ items, isRemoveble, addList, onClick, onRemove, onClickItem, act
                 : null
             }
             key={item.id}
-            className={`${
-              activeItem && activeItem.id === item.id ? 'bg-white' : null
+            className={`${item.active ? 'bg-white' : activeItem && activeItem.id === item.id ? 'bg-white' : null}
             } p-2.5 grid grid-cols-[max-content_1fr_max-content_max-content] items-center mx-auto max-w-[200px] rounded cursor-pointer ${
               !addList
                 ? 'group hover:bg-white ease-in duration-200 hover:shadow-[0_2px_10px_rgba(0,0,0,0.05)]'

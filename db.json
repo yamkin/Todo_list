@@ -19,6 +19,21 @@
       "name": "Frontend",
       "colorId": 8,
       "id": 12
+    },
+    {
+      "name": "Покупки",
+      "colorId": 3,
+      "id": 13
+    },
+    {
+      "name": "Ремонт",
+      "colorId": 7,
+      "id": 14
+    },
+    {
+      "name": "Спорт",
+      "colorId": 6,
+      "id": 15
     }
   ],
   "tasks": [
@@ -30,7 +45,7 @@
     },
     {
       "listId": 10,
-      "text": "Созвон",
+      "text": "Созвон с коллегами",
       "completed": false,
       "id": 15
     },
@@ -69,6 +84,102 @@
       "text": "Learn Docker",
       "completed": false,
       "id": 26
+    },
+    {
+      "listId": 13,
+      "text": "Масло",
+      "completed": false,
+      "id": 29
+    },
+    {
+      "listId": 13,
+      "text": "Пельмени",
+      "completed": false,
+      "id": 30
+    },
+    {
+      "listId": 6,
+      "text": "Metalika",
+      "completed": false,
+      "id": 34
+    },
+    {
+      "listId": 6,
+      "text": "System of a Down",
+      "completed": false,
+      "id": 35
+    },
+    {
+      "listId": 6,
+      "text": "Rammstein",
+      "completed": false,
+      "id": 36
+    },
+    {
+      "listId": 14,
+      "text": "Гвозди",
+      "completed": false,
+      "id": 38
+    },
+    {
+      "listId": 14,
+      "text": "Молоток",
+      "completed": false,
+      "id": 39
+    },
+    {
+      "listId": 14,
+      "text": "Смеси",
+      "completed": false,
+      "id": 40
+    },
+    {
+      "listId": 13,
+      "text": "Фрукты",
+      "completed": false,
+      "id": 42
+    },
+    {
+      "listId": 13,
+      "text": "Пельмени",
+      "completed": false,
+      "id": 43
+    },
+    {
+      "listId": 13,
+      "text": "Жвачка",
+      "completed": false,
+      "id": 44
+    },
+    {
+      "listId": 6,
+      "text": "Руку свело",
+      "completed": false,
+      "id": 45
+    },
+    {
+      "listId": 14,
+      "text": "Пила",
+      "completed": false,
+      "id": 46
+    },
+    {
+      "listId": 15,
+      "text": "Разминка",
+      "completed": false,
+      "id": 47
+    },
+    {
+      "listId": 15,
+      "text": "Бег",
+      "completed": false,
+      "id": 48
+    },
+    {
+      "listId": 15,
+      "text": "Подтягивания на турнике",
+      "completed": false,
+      "id": 49
     }
   ],
   "colors": [
