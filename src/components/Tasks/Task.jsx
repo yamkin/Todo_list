@@ -2,14 +2,25 @@ import React from "react";
 
 import Pencil from '../../assets/icons/pencil.svg';
 
-const Task = ({ id, text, onRemove, onEdit, list }) => {
+const Task = ({ id, text, completed, onRemove, onEdit, list, onComplete }) => {
+
+    const onChangeCheckBox = e => {
+        console.log(list.id, id, e.target.checked)
+        onComplete(list.id, id, e.target.checked)
+    }
 
    return (
         <div
             key={id}
             className="grid grid-cols-[max-content_1fr] gap-[15px] items-center mb-5">
             <div className="group">
-                <input className="peer hidden" id={`task-${id}`} type="checkbox"/>
+                <input
+                    onChange={onChangeCheckBox}
+                    className="peer hidden"
+                    id={`task-${id}`}
+                    checked={completed}
+                    type="checkbox"
+                />
                 <label
                     className="
                                 peer/label

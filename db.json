@@ -70,7 +70,7 @@
     {
       "listId": 12,
       "text": "Learn React and Redux",
-      "completed": false,
+      "completed": true,
       "id": 19
     },
     {
@@ -152,12 +152,6 @@
       "id": 44
     },
     {
-      "listId": 6,
-      "text": "Руку свело",
-      "completed": false,
-      "id": 45
-    },
-    {
       "listId": 14,
       "text": "Пила",
       "completed": false,
@@ -166,7 +160,7 @@
     {
       "listId": 15,
       "text": "Разминка",
-      "completed": false,
+      "completed": true,
       "id": 47
     },
     {

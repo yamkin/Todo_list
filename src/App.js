@@ -96,6 +96,28 @@ function App() {
             });
     };
 
+    const onCompleteTask = (listId, taskId, completed) => {
+        const newList = lists.map(list => {
+            if (list.id === listId) {
+                list.tasks = list.tasks.map((task) => {
+                    if (task.id === taskId) {
+                        task.completed = completed;
+                    }
+                    return task;
+                });
+            }
+            return list;
+        });
+        setLists(newList);
+        axios
+            .patch('http://localhost:3001/tasks/' + taskId, {
+                completed
+            })
+            .catch(() => {
+                alert('Не удалось обновить задачу');
+            });
+    }
+
     useEffect(() => {
         const listId = pathname.split('lists/')[1];
         if (lists) {
@@ -158,6 +180,7 @@ function App() {
                             onEditTitle={onEditListTitle}
                             onRemoveTask={onRemoveTask}
                             onEditTask={onEditTask}
+                            onCompleteTask={onCompleteTask}
                             withoutEmpty
                         />))}
                 </Route>
@@ -165,6 +188,7 @@ function App() {
                     {lists && activeItem && (<Tasks
                             onAddTask={onAddTask}
                             list={activeItem}
+                            onCompleteTask={onCompleteTask}
                             onEditTitle={onEditListTitle}
                             onRemoveTask={onRemoveTask}
                             onEditTask={onEditTask}
